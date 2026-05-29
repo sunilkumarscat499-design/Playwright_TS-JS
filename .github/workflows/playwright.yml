@@ -33,7 +33,7 @@ jobs:
 
     # 4. Uploads the HTML report so you can download it if a test breaks
     - name: Archive Test Reports
-      uses: actions/artifacts@v4
+      uses: actions/upload-artifact@v4
       if: always() # Guarantees reports upload even if the test step fails
       with:
         name: playwright-report
