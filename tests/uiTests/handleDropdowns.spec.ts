@@ -6,7 +6,7 @@ test.describe('verify dropdowns @sanity', () => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://testautomationpractice.blogspot.com");
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         const dropdown1: Locator = page.locator('#country');
         await expect(dropdown1).toBeVisible();
         await expect(dropdown1).toBeEnabled();
@@ -22,7 +22,7 @@ test.describe('verify dropdowns @sanity', () => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://demowebshop.tricentis.com/");
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         const dropdownParent = page.locator('(//a[@href="/computers"])[1]');
         await dropdownParent.hover({ force: true });
         const dropdown = page.locator("//ul[@class='top-menu']//a[@href='/desktops']");

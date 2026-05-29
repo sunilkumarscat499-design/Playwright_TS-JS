@@ -7,7 +7,7 @@ test.describe("radio button, checkbox", () => {
         const page = await browserContext.newPage();
         //now get the locator for radio button
         await page.goto('https://testautomationpractice.blogspot.com/')
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         const radioButton: Locator = page.locator('#male');
         await expect(radioButton).toBeVisible();
         await expect(radioButton).toBeEnabled();
@@ -22,7 +22,7 @@ test.describe("radio button, checkbox", () => {
         const page = await browserContext.newPage();
         //now get the locator for radio button
         await page.goto('https://testautomationpractice.blogspot.com/')
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         const day: string = "Sunday";
         const day1: Locator = page.locator(`#${day.toLocaleLowerCase()}`);
         await day1.hover({ force: true });
@@ -48,7 +48,7 @@ test.describe("radio button, checkbox", () => {
         const page = await browserContext.newPage();
         //now get the locator for radio button
         await page.goto('https://testautomationpractice.blogspot.com/')
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         console.log('pageloaded')
         const elementCheck = page.locator('[class="form-check form-check-inline"]>[type="checkbox"]+label');
         console.log('all inner texts', await elementCheck.allInnerTexts());

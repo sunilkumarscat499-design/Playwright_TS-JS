@@ -10,7 +10,7 @@ test('inside parameter with obj @sanity', { tag: '@regression' }, async ({ page 
     const toscaLogin = new TricentisLogin(page);
     const url = toscaLogin.url
     await page.goto(url);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await toscaLogin.fillEmail(dataObj.email);
     await toscaLogin.fillPwd(dataObj.password);
     await page.screenshot({ path: 'screenshots/creds.png' })
@@ -31,7 +31,7 @@ arr.forEach(element => {
         const toscaLogin = new TricentisLogin(page);
         const url = toscaLogin.url
         await page.goto(url);
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         await toscaLogin.fillEmail(dataObj.email);
         await toscaLogin.fillPwd(dataObj.password);
         await page.screenshot({ path: 'screenshots/creds.png' })

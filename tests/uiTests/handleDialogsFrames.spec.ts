@@ -23,7 +23,7 @@ test.describe('verify dialogs and rames', () => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://demo.automationtesting.in/Frames.html");
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         const frame = page.frameLocator('[src="SingleFrame.html"]');
         const textBox = frame.locator('[type="text"]');
         await textBox.fill("Got it..!!");
@@ -35,7 +35,7 @@ test.describe('verify dialogs and rames', () => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://demo.automationtesting.in/Frames.html");
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
         await page.locator("[href*='#Multip']").click();
         const frame = page.frameLocator('[src*="MultipleFr"]');
         const insideFrame = frame.frameLocator("[src*='SingleFr']");

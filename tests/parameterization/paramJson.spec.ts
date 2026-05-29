@@ -10,7 +10,7 @@ test('inside parameter with json @sanity', { tag: '@regression' }, async ({ page
     const toscaLogin = new TricentisLogin(page);
     const url = toscaLogin.url
     await page.goto(url);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await toscaLogin.fillEmail(jsonData.email);
     await toscaLogin.fillPwd(jsonData.password);
     await page.screenshot({ path: 'screenshots/creds.png' })
