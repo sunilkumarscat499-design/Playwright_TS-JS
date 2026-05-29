@@ -1,0 +1,41 @@
+name: Playwright Regression Suite
+on:
+  push:
+    branches: [ main,test ]
+  pull_request:
+    branches: [ main,test ]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js Environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: 'npm'
+
+    # 1. Installs your package.json dependencies (like typescript, allure-playwright)
+    - name: Install Project Dependencies
+      run: npm ci
+
+    # 2. Installs the core browser binaries needed by Playwright
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    # 3. Executes the headless execution script from your package.json menu
+    - name: Run Playwright Tests
+      run: npm run test
+
+    # 4. Uploads the HTML report so you can download it if a test breaks
+    - name: Archive Test Reports
+      uses: actions/artifacts@v4
+      if: always() # Guarantees reports upload even if the test step fails
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
