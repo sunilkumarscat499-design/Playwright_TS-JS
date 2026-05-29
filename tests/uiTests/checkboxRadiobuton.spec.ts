@@ -2,7 +2,7 @@ import { test, Page, Browser, Locator, expect } from '@playwright/test';
 
 test.describe("radio button, checkbox", () => {
 
-    test('verify radio buttons', async ({ browser }) => {
+    test('verify radio buttons @sanity', async ({ browser }) => {
         const browserContext = await browser.newContext();
         const page = await browserContext.newPage();
         //now get the locator for radio button
@@ -17,7 +17,7 @@ test.describe("radio button, checkbox", () => {
         await expect(radioButton).toBeChecked();
     })
 
-    test('verify checkbox', async ({ browser }) => {
+    test('verify checkbox @sanity', async ({ browser }) => {
         const browserContext = await browser.newContext();
         const page = await browserContext.newPage();
         //now get the locator for radio button
@@ -43,7 +43,7 @@ test.describe("radio button, checkbox", () => {
 
     })
 
-    test('verify checkbox innertexts', async ({ browser }) => {
+    test('verify checkbox innertexts @sanity', async ({ browser }) => {
         const browserContext = await browser.newContext();
         const page = await browserContext.newPage();
         //now get the locator for radio button

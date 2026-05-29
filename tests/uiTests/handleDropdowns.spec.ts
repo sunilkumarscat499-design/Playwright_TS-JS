@@ -1,8 +1,8 @@
 import { test, expect, Locator, Browser } from '@playwright/test'
 
-test.describe('verify dropdowns', () => {
+test.describe('verify dropdowns @sanity', () => {
 
-    test('regular drop down', async ({ browser }) => {
+    test('regular drop down @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://testautomationpractice.blogspot.com");

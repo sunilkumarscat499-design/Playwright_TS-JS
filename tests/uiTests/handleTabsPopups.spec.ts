@@ -2,7 +2,7 @@ import { test, expect, Locator, Browser } from '@playwright/test'
 
 test.describe('verify tabs and pop ups', () => {
 
-    test('new tab inside context', async ({ browser }) => {
+    test('new tab inside context @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page1 = await context.newPage();
         const page2 = await context.newPage();
@@ -17,7 +17,7 @@ test.describe('verify tabs and pop ups', () => {
 
     });
 
-    test('new tab created', async ({ browser }) => {
+    test('new tab created @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page1 = await context.newPage();
         await page1.goto("https://testautomationpractice.blogspot.com/");
@@ -32,7 +32,7 @@ test.describe('verify tabs and pop ups', () => {
 
     });
 
-    test('multiple tabs popped', async ({ browser }) => {
+    test('multiple tabs popped @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page1 = await context.newPage();
         await page1.goto('https://testautomationpractice.blogspot.com/');

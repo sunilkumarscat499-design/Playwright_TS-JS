@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/apiTests/apiTest1.spec.ts"
+    "clean": "rimraf playwright-report test-results allure-results allure-report",
+    "test": "playwright test --grep @sanity",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
   },
   "keywords": [],
-  "author": "",
+  "author": "sunil",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {

@@ -6,7 +6,7 @@ const dataObj = {
     user: 'sunil321@gmail.com'
 }
 
-test('inside parameter with obj', { tag: '@regression' }, async ({ page }) => {
+test('inside parameter with obj @sanity', { tag: '@regression' }, async ({ page }) => {
     const toscaLogin = new TricentisLogin(page);
     const url = toscaLogin.url
     await page.goto(url);
@@ -27,7 +27,7 @@ const arr: string[] = ['sunil321@gmail.com', 'dummy2']
 
 //Using loop statements
 arr.forEach(element => {
-    test(`Params with loop ${element}`, { tag: '@regression' }, async ({ page }) => {
+    test(`Params with loop ${element} @sanity`, { tag: '@regression' }, async ({ page }) => {
         const toscaLogin = new TricentisLogin(page);
         const url = toscaLogin.url
         await page.goto(url);

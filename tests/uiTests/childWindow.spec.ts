@@ -1,6 +1,6 @@
 import { test, Locator, expect, Browser } from '@playwright/test'
 
-test.describe('verify child windows & tabs', () => {
+test.describe('verify child windows & tabs @sanity', () => {
 
     test("verify child tab", async ({ browser }) => {
         const context = await browser.newContext();

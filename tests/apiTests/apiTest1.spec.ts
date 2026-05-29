@@ -24,7 +24,7 @@ test('createBooking @regression @sanity', async ({ request }) => {
     })
 })
 
-test.skip('dummyAPI direct injection', async ({ request }) => {
+test.skip('dummyAPI direct injection @sanity', async ({ request }) => {
     const response = await request.post("", {});
     const jsonResponse = await response.json();
     expect(response.status()).toBe(200);

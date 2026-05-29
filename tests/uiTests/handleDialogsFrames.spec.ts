@@ -2,7 +2,7 @@ import { test, expect, Locator, Browser } from '@playwright/test'
 
 test.describe('verify dialogs and rames', () => {
 
-    test('verify dialogs', async ({ browser }) => {
+    test('verify dialogs @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://testautomationpractice.blogspot.com/");
@@ -19,7 +19,7 @@ test.describe('verify dialogs and rames', () => {
 
     })
 
-    test('validate Frames', async ({ browser }) => {
+    test('validate Frames @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://demo.automationtesting.in/Frames.html");
@@ -31,7 +31,7 @@ test.describe('verify dialogs and rames', () => {
 
     })
 
-    test.only('validate embedded Frames', async ({ browser }) => {
+    test('validate embedded Frames @sanity', async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://demo.automationtesting.in/Frames.html");

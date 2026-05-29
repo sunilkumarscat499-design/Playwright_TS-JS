@@ -6,7 +6,7 @@ const jsonPath = 'testdata/login.json';
 const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 
 
-test('inside parameter with json', { tag: '@regression' }, async ({ page }) => {
+test('inside parameter with json @sanity', { tag: '@regression' }, async ({ page }) => {
     const toscaLogin = new TricentisLogin(page);
     const url = toscaLogin.url
     await page.goto(url);
