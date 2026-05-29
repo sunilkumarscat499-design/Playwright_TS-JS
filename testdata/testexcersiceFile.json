@@ -1,0 +1,13 @@
+{
+    "arr": [
+        1,
+        2,
+        3
+    ],
+    "numbers": {
+        "num1": 1,
+        "num2": 2
+    },
+    "email": "sunil321@gmail.com",
+    "password": "Arjith@123"
+}
